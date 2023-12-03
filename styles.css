@@ -1,0 +1,706 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    max-width: 100vw;
+    /*overflow-x: hidden;*/
+}
+
+.section {
+    width: 100vw;
+    height: 100%;
+}
+
+.fullscreen-bg {
+    background: url('img/cta-bg.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1; /* Ensures it's behind the content */
+}
+
+#navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: transparent;
+    transition: background-color 0.3s;
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: white;
+    color: #000000;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-right: 5%;
+    font-weight: 200;
+
+}
+
+#navbar li {
+    float: right;
+}
+
+#navbar li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#navbar.scrolled {
+    background-color: #1991b9;
+    opacity: 90%;
+}
+
+#about {
+    width: 95vw;
+    /* Styles for About Us section */
+    background-color: #f0f0f0; /* Example background color */
+    padding: 50px; /* Example padding */
+}
+#navbar section{
+
+    margin-left: 5%;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+#home {
+    text-align: center;
+    padding: 14px 16px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ensure the content takes the full height of the viewport */
+    color: white;
+}
+
+
+#home h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0; /* Reset margin to remove any default spacing */
+}
+
+#home span {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 4rem; /* Adjust the size as needed */
+}
+#home-button {
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: transparent; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    margin-top: 20px; /* Space above the button */
+    align-items: center;
+    justify-content: center;
+}
+
+#home-button:hover {
+    background-color: rgba(13, 110, 253, 0.69); /* Change color on hover */
+}
+.scroll-down-button {
+    display: inline-block;
+    text-decoration: none; /* Remove underline from link */
+    color: white; /* Arrow color */
+    font-size: 2rem; /* Adjust arrow size */
+    background:  url("img/double_arrow_down.svg"); /* Semi-transparent white background */
+    filter: brightness(0) invert(1);
+    background-size: contain;
+    background-position: center;
+    background-blend-mode: screen;
+    border-radius: 50%; /* Circular shape */
+    width: 50px; /* Width of the circle */
+    height: 50px; /* Height of the circle */
+    line-height: 50px; /* Center the arrow vertically */
+    text-align: center; /* Center the arrow horizontally */
+    position: relative; /* Needed to position the pseudo-element */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+    margin-top: 10px; /* Space above the button */
+}
+
+.scroll-down-button:hover {
+    background: rgba(255, 255, 255, 0.3) url("img/double_arrow_down.svg"); /* Semi-transparent white background */
+    filter: brightness(0) invert(1);
+    background-size: contain;
+    background-position: center;
+    background-blend-mode: screen;
+    /*height: 50%;*/
+    /*width: 100%;*/
+}
+
+.scroll-down-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Width of the inner icon */
+    height: 80%; /* Height of the inner icon */
+    border-radius: 50%; /* Circular shape for the inner icon */
+    border: 2px solid white; /* Border color and width for the inner icon */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.scroll-down-button:hover::after {
+    width: 100%; /* Increase width on hover */
+    height: 100%; /* Increase height on hover */
+}
+.section.about-us {
+    background-color: #f8f8f8;
+    background-image: url('img/about-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: left; /* Align text to the left */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between the main content and features */
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 100vw; /* Increase width on hover */
+    height: 60%;
+}
+
+/* Optional dark overlay */
+.section.about-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    width: 100vw; /* Increase width on hover */
+    height: 60%;
+}
+
+.about-content {
+    flex-basis: 40%; /* Adjust width as needed */
+    max-width: 40%; /* Adjust maximum width as needed */
+    padding-right: 20px;
+    width: 100vw; /* Increase width on hover */
+    height: 60%;
+}
+
+.features {
+    flex-basis: 50%; /* Adjusted width */
+    margin-left: 20px;
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align features to the start */
+    flex-wrap: wrap; /* Wrap items */
+    margin: 0;
+    /*width: 50%; !* Increase width on hover *!*/
+    /*height: 50%;*/
+}
+
+.feature-item {
+    width: calc(50% - 10px); /* Adjust width as needed, accounting for margin */
+    margin: 5px; /* Adjust margin as needed */
+    height: 10% ;
+}
+
+.feature-item img {
+    width: 30px;
+}
+
+.feature-item h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 3px;
+}
+
+.feature-item p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+}
+.about-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.about-button:hover {
+    background-color: #0056b3;
+}
+.services {
+    background: #fff;
+    height: 50vh;
+    padding: 20px;
+    text-align: center;
+    width: 97%;
+    justify-content: space-evenly;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.services-intro {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.service-card {
+    width: calc(25% - 20px); /* Adjust the width calculation based on the gap */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Simple box shadow */
+    border-radius: 8px; /* Rounded corners */
+    background: #f9f9f9; /* Light grey background */
+    transition: transform 0.3s ease; /* Smooth transform transition */
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.service-card img {
+    width: 50px; /* Adjust the size of the icons */
+    margin-bottom: 15px; /* Space between icon and heading */
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e8f4f8; /* Adjust the color to match your design */
+    padding: 10px 0;
+    height: 40vh;
+}
+
+.stat {
+    text-align: center;
+    flex-basis: 20%; /* Adjust the width of each stat */
+}
+
+.stat img {
+    width: 64px; /* Adjust the size as needed */
+    height: 64px; /* Adjust the size as needed */
+    margin-bottom: 5px;
+}
+
+.stat h3 {
+    font-size: 2.5rem; /* Adjust the size as needed */
+    color: #333; /* Adjust the color as needed */
+    margin-bottom: 2px;
+    margin-top: 5px;
+}
+
+.stat p {
+    color: #666; /* Adjust the color as needed */
+    font-size: 1rem; /* Adjust the size as needed */
+    line-height: 1.4;
+}
+
+.portfolio {
+    height: 100vh ;
+    width: 100vw;
+    text-align: center;
+    margin: 5px 5px; /* Adjust based on your layout */
+    border: 2px;
+    display: block;
+    padding: 10px;
+
+}
+
+.portfolio-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.portfolio-description {
+    color: #666;
+    margin-bottom: 30px; /* Space between text and filter buttons */
+}
+
+.portfolio-filter button {
+    background-color: #e7e7e7; /* Light grey background */
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.portfolio-filter button:hover {
+    background-color: #d7d7d7; /* Darker grey on hover */
+}
+
+.portfolio-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between items */
+    flex-wrap: wrap; /* Allows items to wrap to next line */
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.portfolio-item {
+    border-radius: 20px;
+    width: 30%; /* Adjust the width as needed */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    margin-bottom: 20px; /* Space below each item */
+}
+
+.portfolio-item img {
+    border-radius: 20px;
+    width: 100%; /* Make image fill the container */
+    height: auto; /* Keep image aspect ratio */
+    display: block; /* Remove any extra space beneath the image */
+}
+
+.team {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.team-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.team-description {
+    margin-bottom: 40px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.team-member {
+    position: relative;
+    width: calc(33.333% - 30px); /* Adjust based on the gap and number of items */
+    cursor: pointer;
+}
+
+.team-member img {
+    width: 100%;
+    display: block;
+    border-radius: 10px; /* Rounded corners for the image */
+}
+
+.member-info {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+}
+
+.team-member:hover .member-info {
+    opacity: 1; /* Show the info on hover */
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* Align to the bottom right */
+    background-color: #007bff; /* Match your color scheme */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 50%; /* Make it round */
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    z-index: 1000; /* Ensure it's above other elements */
+    font-size: 20px; /* Adjust arrow size */
+    line-height: 20px; /* Center the arrow vertically */
+    height: 40px; /* Size of the button */
+    width: 40px; /* Size of the button */
+    text-align: center; /* Center the arrow horizontally */
+}
+
+/* Optionally, add :hover and :focus styles for better user experience */
+#back-to-top:hover,
+#back-to-top:focus {
+    background-color: #0056b3;
+    outline: none; /* Removes the outline on focus for aesthetics */
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    padding: 50px 20px;
+    background: #f0f0f0; /* Example background color */
+    margin-top: 500px;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-address,
+.contact-email,
+.contact-phone {
+    margin-bottom: 20px;
+}
+
+.icon-location,
+.icon-email,
+.icon-phone {
+    /* Style your icons here */
+}
+
+.contact-form {
+    max-width: 600px;
+    margin-left: auto; /* Align the form on the right */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Base styles are not repeated here */
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .section, #about, .portfolio, .contact-section {
+        width: 100%; /* Adjust width to 100% for smaller screens */
+        padding: 20px; /* Reduce padding */
+    }
+
+    #navbar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    #navbar li {
+        margin-bottom: 10px; /* Add some space between menu items */
+    }
+
+    #home h2 {
+        font-size: 1.2rem; /* Smaller font size for headings */
+    }
+
+    #home span {
+        font-size: 3rem; /* Smaller font size for large text */
+    }
+
+    .features, .service-cards, .team-members, .contact-details {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .feature-item, .service-card, .team-member, .contact-address, .contact-email, .contact-phone {
+        width: 100%; /* Full width for these items */
+        margin-bottom: 20px; /* Add some space between items */
+    }
+
+    .feature-item img, .service-card img, .stat img {
+        width: 40px; /* Smaller image size */
+        height: 40px; /* Keep aspect ratio */
+    }
+
+    .stat {
+        flex-basis: auto; /* Allow stats to take necessary space */
+    }
+
+    .contact-form {
+        width: 100%; /* Full width for the form */
+        margin: 0; /* Reset any margins */
+    }
+}
+
+/* Media query for mobile phones */
+@media (max-width: 480px) {
+    #home h2 {
+        font-size: 1rem; /* Even smaller font size for headings */
+    }
+
+    #home span {
+        font-size: 2.5rem; /* Smaller font size for large text */
+    }
+
+    #navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+    }
+
+    #navbar ul {
+        width: 100%; /* Full width for the navbar */
+    }
+
+    #back-to-top {
+        font-size: 16px; /* Smaller arrow icon */
+        padding: 8px; /* Smaller button */
+        width: 32px; /* Smaller button */
+        height: 32px; /* Smaller button */
+    }
+}
+
+/* You can add more media queries for different screen sizes as needed */
+/* Base and other styles are not repeated here */
+
+/* Media query for screens up to 600px wide */
+@media (max-width: 600px) {
+    #navbar {
+        display: none; /* Hide the navbar */
+    }
+
+    /* Adjust the font sizes for smaller screens */
+    #home h2, .services-title, .team-title, .portfolio-title {
+        font-size: 1.4rem; /* Smaller font size for headings */
+    }
+
+    #home span, .stat h3 {
+        font-size: 2.2rem; /* Smaller font size for large text and stats */
+    }
+
+    /* Adjust the padding and layout for sections */
+    .section, #about, .portfolio, .contact-section, .team, .stats, .services {
+        padding: 15px; /* Reduce padding */
+        /* Ensure that the width is not set to a fixed value to allow for padding */
+    }
+
+    /* Adjust the width and margins for feature items, service cards, and team members */
+    .feature-item, .service-card, .team-member {
+        width: 100%; /* Full width for these items */
+        margin-bottom: 15px; /* Adjust the space between items */
+    }
+
+    /* Adjust image sizes for smaller screens */
+    .feature-item img, .service-card img, .stat img, .team-member img {
+        width: 40px; /* Adjust image width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Adjust form input fields and button size */
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea,
+    .contact-form button {
+        font-size: 0.8rem; /* Smaller font size for form elements */
+    }
+
+    /* Adjust the back-to-top button size */
+    #back-to-top {
+        font-size: 16px; /* Smaller arrow icon */
+        padding: 8px; /* Smaller button padding */
+        width: 32px; /* Smaller button width */
+        height: 32px; /* Smaller button height */
+        bottom: 15px; /* Adjust the position from the bottom */
+        right: 15px; /* Adjust the position from the right */
+    }
+
+    /* Additional adjustments as needed */
+}
+
+/* Continue with other responsive styles for different breakpoints */
+@media (max-width: 600px) {
+    /* About section specific styles for small screens */
+    #about {
+        flex-direction: column; /* Stack flex items vertically */
+        align-items: center; /* Center align the flex items */
+        padding: 20px; /* Adjust padding */
+        text-align: center; /* Center-align text */
+    }
+
+    #about .about-content,
+    #about .features {
+        width: 100%; /* Full width for child elements */
+        max-width: none; /* Override any max-width set */
+    }
+
+    #about h2 {
+        font-size: 1.5rem; /* Adjust font size for the heading */
+        margin-bottom: 20px; /* Add some space below the heading */
+    }
+
+    #about p {
+        font-size: 1rem; /* Adjust the font size for paragraph text */
+    }
+
+    #about .about-button {
+        margin-top: 20px; /* Add space above the button */
+    }
+
+    #about .feature-item {
+        width: 100%; /* Each feature item takes full width */
+        margin-bottom: 20px; /* Add space between feature items */
+    }
+
+    #about .feature-item img {
+        margin: auto; /* Center images within their container */
+        display: block; /* Ensure images are block level to respond to margin: auto */
+    }
+
+    #about .feature-item h3,
+    #about .feature-item p {
+        font-size: 1rem; /* Adjust font size for feature titles and descriptions */
+    }
+}
