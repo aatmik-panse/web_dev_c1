@@ -470,6 +470,8 @@ body, html {
 }
 
 .contact-section {
+    margin 20px;
+    
     display: flex;
     justify-content: space-around;
     align-items: start;
